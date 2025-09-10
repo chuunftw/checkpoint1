@@ -6,3 +6,7 @@ git push origin main
 git pull origin main 
 
 ^ For when updating code from others edits 
+
+git checkout -b new-branch-name
+
+^ creating new branches 
