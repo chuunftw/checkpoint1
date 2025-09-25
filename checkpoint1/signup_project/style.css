@@ -1,187 +1,123 @@
-/* Modern CSS for Sign-in/Sign-up Pages */
-
-/* Reset default browser styles and set up basic styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Makes width/height calculations easier */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+  --accent-color: #8672FF;
+  --base-color: white;
+  --text-color: #2E2B41;
+  --input-color: #F3F0FF;
 }
-
-/* Body styling - sets up the overall page appearance */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh; /* Full viewport height */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    color: #333;
+*{
+  margin: 0;
+  padding: 0;
 }
-
-/* Main container styling */
-main {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 30px;
+html{
+  font-family: Poppins, Segoe UI, sans-serif;
+  font-size: 12pt;
+  color: var(--text-color);
+  text-align: center;
 }
-
-/* Heading styles */
-h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 30px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+body{
+  min-height: 100vh;
+  background-color: var(--base-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/* Form styling */
-form {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Space between form elements */
-    margin-bottom: 20px;
+.wrapper{
+  box-sizing: border-box;
+  background-color: var(--base-color);
+  height: 100vh;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-/* Label styling (contains the inputs) */
-label {
-    display: block;
-    width: 100%;
+h1{
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
-
-/* Input field styling */
-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #e1e5e9;
-    border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease; /* Smooth animation on focus */
-    background-color: #f8f9fa;
-    outline: none; /* Remove default focus outline */
+form{
+  width: min(400px, 100%);
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-
-/* Input focus effects - what happens when user clicks on input */
-input:focus {
-    border-color: #667eea;
-    background-color: white;
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+form > div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
-/* Placeholder text styling */
-input::placeholder {
-    color: #a0a0a0;
-    font-weight: 400;
+form label{
+  flex-shrink: 0;
+  height: 50px;
+  width: 50px;
+  background-color: var(--accent-color);
+  fill: var(--base-color);
+  color: var(--base-color);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
-
-/* Submit button styling */
-button[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
+form input{
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 0 10px 10px 0;
+  border: 2px solid var(--input-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
 }
-
-/* Submit button hover effects */
-button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #5a6fd8, #6a4190);
+form input:hover{
+  border-color: var(--accent-color);
 }
-
-/* Submit button active (when clicked) effects */
-button[type="submit"]:active {
-    transform: translateY(0);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+form input:focus{
+  outline: none;
+  border-color: var(--text-color);
 }
-
-/* Divider styling (the "or" text) */
-div {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    margin-bottom: 15px;
-    color: #666;
-    font-weight: 500;
+form input::placeholder{
+  color: var(--text-color);
 }
-
-/* Navigation button styling (Sign Up / Sign In buttons) */
-button[type="button"] {
-    background: transparent;
-    color: #667eea;
-    border: 2px solid #667eea;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 10px;
+form label span{
+  color: black;
 }
-
-/* Navigation button hover effects */
-button[type="button"]:hover {
-    background: #667eea;
-    color: white;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+form button{
+  margin-top: 10px;
+  border: none;
+  border-radius: 1000px;
+  padding: .85em 4em;
+  background-color: var(--accent-color);
+  color: var(--base-color);
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 150ms ease;
 }
-
-/* Responsive design for mobile devices */
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
-    main, form, div {
-        padding: 30px 20px;
-    }
-    
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    input, button {
-        padding: 12px;
-        font-size: 14px;
-    }
+form button:hover{
+  background-color: var(--text-color);
 }
-
-/* Additional styling for better visual hierarchy */
-body > div:last-child {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+form button:focus{
+  outline: none;
+  background-color: var(--text-color);
 }
-
-/* Subtle animation when page loads */
-main, form, body > div {
-    animation: slideUp 0.6s ease-out;
+a{
+  text-decoration: none;
+  color: var(--accent-color);
 }
+<<<<<<< HEAD
 
 @keyframes slideUp {
     from {
@@ -211,4 +147,23 @@ main, form, body > div {
     0%, 100% { transform: translateX(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
     20%, 40%, 60%, 80% { transform: translateX(8px); }
+=======
+a:hover{
+  text-decoration: underline;
+}
+@media(max-width: 1100px){
+  .wrapper{
+    width: min(600px, 100%);
+    border-radius: 0;
+  }
+}
+form div.incorrect label{
+  background-color: #f06272;
+}
+form div.incorrect input{
+  border-color: #f06272;
+}
+#error-message{
+  color:#f06272;
+>>>>>>> 4a4f4ec395db1c70fea0fbbc9af5442f5ab330d1
 }
