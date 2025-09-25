@@ -5,55 +5,6 @@ const password_input = document.getElementById('password-input')
 const repeat_password_input = document.getElementById('repeat-password-input')
 const error_message = document.getElementById('error-message')
 
-<<<<<<< HEAD
-form.addEventListener('submit', (e) =>{
-    e.preventDefault()
-
-    clearErrors()
-
-    let errors = []
-    if(username_input){
-        errors = getSignupFormErrors(email_input.value, username_input.value, password_input.value, repeat_password_input.value)
-    }
-    else{
-        errors = getLoginFormErrors(email_input.value, password_input.value)
-    }
-
-    if(errors.length>0){
-        error_message.innerText = errors.join(". ")
-    }
-})
-
-function getSignupFormErrors(email, username, password, repeatPassword){
-    let errors = []
-    if(username === '' || username == null){
-        errors.push('Username is required')
-        username_input.parentElement.classList.add('incorrect')
-    }
-    if(email === '' || email == null){
-        errors.push('Email is required')
-        email_input.parentElement.classList.add('incorrect')
-    }
-    if(password === '' || password == null){
-        errors.push('Password is required')
-        password_input.parentElement.classList.add('incorrect')
-    }
-    if(password !== repeatPassword){
-        errors.push('Passwords do not match')
-        repeat_password_input.parentElement.classList.add('incorrect')
-    }
-    return errors;
-}
-
-function clearErrors(){
-    document.querySelectorAll('.incorrect').forEach(element => {
-        element.classList.remove('incorrect')
-    })
-    if(error_message){
-        error_message.innerText = ''
-    }
-}
-=======
 form.addEventListener('submit', (e) => {
   let errors = []
 
@@ -127,4 +78,3 @@ allInputs.forEach(input => {
     }
   })
 })
->>>>>>> 4a4f4ec395db1c70fea0fbbc9af5442f5ab330d1
